@@ -1,4 +1,5 @@
 import datetime as dt
+from selenium.webdriver.remote.webelement import WebElement
 
 
 class Base:
@@ -16,7 +17,7 @@ class Base:
         print(f'Current url {current_url}')
 
     """Метод по сравнению значений"""
-    def assert_word(self, word, result: str) -> None:
+    def assert_word(self, word: WebElement, result: str) -> None:
         word_value: str = word.text
         assert word_value == result
         print('Expected Word Value - Correct Result')
@@ -32,4 +33,3 @@ class Base:
         current_url: str = self.driver.current_url
         assert current_url == result
         print('Expected Url Value - Correct Result')
-
