@@ -13,7 +13,7 @@ class MainPage(Base):
     # Locators
 
     test_words_path: str = '//h2[@class="content-section__title"]'
-    catalog_btn: str = '//button[@class"cd-trigger"]'
+    catalog_btn: str = '//button[@class="cd-trigger"]'
     notebooks_link: str = '//*[@id="cd"]/div/div/div/div[2]/div[1]/ul/li[2]/a'
     notebooks_filter: str = '//*[@id="cd-subcategory-4861"]/ul/li[2]/ul/li[1]/a'
 
