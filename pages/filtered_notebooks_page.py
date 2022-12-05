@@ -6,6 +6,7 @@ from base.base_class import Base
 
 
 class FilteredNotebookPage(Base):
+    """Класс страницы интернет-магазина с отфильтрованными товарами"""
 
     TEST_URL: str = ('https://flashcom.ru/market/noutbuki/Lenovo/'
                      'filter_priceTo-90000|note_diag-14|3775-Intel%20Core%20i3|1469-'
@@ -18,6 +19,7 @@ class FilteredNotebookPage(Base):
     vendor_code_path: str = '//*[@id="listing-grid"]/div[3]/div/span[2]'
     notebook_price_path: str = '//*[@id="listing-grid"]/div[3]/div/div[2]/div[1]/span'
     add_to_cart_btn_path: str = '//*[@id="listing-grid"]/div[3]/div/div[2]/div[2]/button'
+    cart_btn_path: str = '/html/body/header/div[2]/div/div/div[2]/a[3]/span'
 
     # Getters
 
@@ -36,11 +38,20 @@ class FilteredNotebookPage(Base):
             ec.element_to_be_clickable((By.XPATH, self.add_to_cart_btn_path))
         )
 
+    def get_cart_btn(self) -> WebElement:
+        return WebDriverWait(self.driver, 10).until(
+            ec.element_to_be_clickable((By.XPATH, self.add_to_cart_btn_path))
+        )
+
     # Actions
 
     def click_add_to_cart_btn(self) -> None:
         self.get_add_to_cart_btn().click()
         print('Click Add To Cart Btn')
+
+    def click_cart_btn(self) -> None:
+        self.get_cart_btn().click()
+        print('Click Cart Btn')
 
     # Methods
 
@@ -50,3 +61,4 @@ class FilteredNotebookPage(Base):
         self.assert_word(self.get_vendor_code(), self.NOTEBOOK_VENDOR_CODE)
         self.assert_word(self.get_notebook_price(), self.NOTEBOOK_PRICE)
         self.click_add_to_cart_btn()
+        self.click_cart_btn()

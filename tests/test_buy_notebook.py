@@ -2,6 +2,7 @@ from utilities.utils import get_driver
 from pages.main_page import MainPage
 from pages.notebooks_page import NotebookPage
 from pages.filtered_notebooks_page import FilteredNotebookPage
+from pages.cart_page import CartPage
 
 
 def test_buy_notebook(set_up) -> None:
@@ -16,5 +17,8 @@ def test_buy_notebook(set_up) -> None:
 
     filtered_notebook_page = FilteredNotebookPage(driver)
     filtered_notebook_page.add_to_cart_notebook()
+
+    cart_page = CartPage(driver)
+    cart_page.confirm_order()
 
     driver.quit()

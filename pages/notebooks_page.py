@@ -12,6 +12,7 @@ class NotebookPage(Base):
     """Класс страницы с ноутбуками"""
 
     TEST_WORD: str = 'Ноутбуки'
+    INPUT_RANGE_FIELD_VALUE: int = 90000
     RANGE_FIELD_VALUE: str = '90000'
     MANUFACTURER_TEST_WORD: str = 'Lenovo'
     SCREEN_TEST_VALUE: str = '14'
@@ -86,7 +87,7 @@ class NotebookPage(Base):
         self.get_range_field().click()
         self.get_range_field().send_keys(Keys.COMMAND + 'a')
         self.get_range_field().send_keys(Keys.DELETE)
-        self.get_range_field().send_keys(90000)
+        self.get_range_field().send_keys(self.INPUT_RANGE_FIELD_VALUE)
         print('Input Range Field Value')
 
     def click_manufacturer_checkbox(self) -> None:

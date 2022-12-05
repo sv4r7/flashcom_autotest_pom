@@ -40,3 +40,8 @@ class Base:
         current_url: str = self.driver.current_url
         assert current_url == result
         print('Expected Url Value - Correct Result')
+
+    """Метод по сравнению  результата работы функции с ожидаемым значением"""
+    def assert_func(self, function: str, result: str) -> None:
+        assert function == result
+        print('Expected Function Value - Correct Result')
