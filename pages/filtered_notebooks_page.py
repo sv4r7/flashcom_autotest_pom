@@ -16,9 +16,9 @@ class FilteredNotebookPage(Base):
 
     # Locators
 
-    vendor_code_path: str = '//*[@id="listing-grid"]/div[3]/div/span[2]'
-    notebook_price_path: str = '//*[@id="listing-grid"]/div[3]/div/div[2]/div[1]/span'
-    add_to_cart_btn_path: str = '//*[@id="listing-grid"]/div[3]/div/div[2]/div[2]/button'
+    vendor_code_path: str = '//*[@id="listing-grid"]/div[2]/div/span[2]'
+    notebook_price_path: str = '//*[@id="listing-grid"]/div[2]/div/div[2]/div[1]/span'
+    add_to_cart_btn_path: str = '//*[@id="listing-grid"]/div[2]/div/div[2]/div[2]/button'
     cart_btn_path: str = '/html/body/header/div[2]/div/div/div[2]/a[3]/span'
 
     # Getters
@@ -57,8 +57,13 @@ class FilteredNotebookPage(Base):
 
     def add_to_cart_notebook(self):
         self.get_current_url()
-        self.assert_url(self.TEST_URL)
-        self.assert_word(self.get_vendor_code(), self.NOTEBOOK_VENDOR_CODE)
-        self.assert_word(self.get_notebook_price(), self.NOTEBOOK_PRICE)
+        self.assert_url(self.TEST_URL,
+                        'Filtered Notebook Page Url')
+        self.assert_word(self.get_vendor_code(),
+                         self.NOTEBOOK_VENDOR_CODE,
+                         'Vendor Code Value')
+        self.assert_word(self.get_notebook_price(),
+                         self.NOTEBOOK_PRICE,
+                         'Notebook Price Value')
         self.click_add_to_cart_btn()
         self.click_cart_btn()

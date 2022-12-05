@@ -24,9 +24,9 @@ class NotebookPage(Base):
 
     test_word_path: str = '//h1[@class="page__title"]'
     input_range_max_path: str = '//input[@id="range-max-1"]'
-    manufacturer_test_word_path: str = '//label[@for="form-listing-13"]'
-    screen_test_value_path: str = '//label[@for="form-listing-18"]'
-    processor_test_value_path: str = '//label[@for="form-listing-32"]'
+    manufacturer_test_word_path: str = '//label[@for="form-listing-11"]'
+    screen_test_value_path: str = '//label[@for="form-listing-16"]'
+    processor_test_value_path: str = '//label[@for="form-listing-30"]'
     video_card_test_value_path: str = '//label[@for="form-listing-53"]'
     memory_test_value_path: str = '//label[@for="form-listing-72"]'
     submit_btn_path: str = '//*[@id="form-listing-filters"]/fieldset[16]/div/div[1]/button'
@@ -146,17 +146,31 @@ class NotebookPage(Base):
 
     def select_notebook_filters(self):
         self.get_current_url()
-        self.assert_word(self.get_test_word(), self.TEST_WORD)
+        self.assert_word(self.get_test_word(),
+                         self.TEST_WORD,
+                         'Notebooks Page Test Word')
         self.input_range_field()
-        self.assert_value(self.get_range_field(), self.RANGE_FIELD_VALUE)
+        self.assert_value(self.get_range_field(),
+                          self.RANGE_FIELD_VALUE,
+                          'Range Field Value')
         self.click_manufacturer_checkbox()
-        self.assert_word(self.get_manufacturer_test_word(), self.MANUFACTURER_TEST_WORD)
+        self.assert_word(self.get_manufacturer_test_word(),
+                         self.MANUFACTURER_TEST_WORD,
+                         'Manufacturer Test Word')
         self.click_screen_checkbox()
-        self.assert_word(self.get_screen_test_value(), self.SCREEN_TEST_VALUE)
+        self.assert_word(self.get_screen_test_value(),
+                         self.SCREEN_TEST_VALUE,
+                         'Screen Size Value')
         self.click_processor_checkbox()
-        self.assert_word(self.get_processor_test_value(), self.PROCESSOR_TEST_VALUE)
+        self.assert_word(self.get_processor_test_value(),
+                         self.PROCESSOR_TEST_VALUE,
+                         'Processor Value')
         self.click_video_card_checkbox()
-        self.assert_word(self.get_video_card_test_value(), self.VIDEO_CARD_TEST_VALUE)
+        self.assert_word(self.get_video_card_test_value(),
+                         self.VIDEO_CARD_TEST_VALUE,
+                         'Video Card Value')
         self.click_memory_checkbox()
-        self.assert_word(self.get_memory_test_value(), self.MEMORY_TEST_VALUE)
+        self.assert_word(self.get_memory_test_value(),
+                         self.MEMORY_TEST_VALUE,
+                         'Memory Value')
         self.click_submit_btn()

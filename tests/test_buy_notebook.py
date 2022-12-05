@@ -3,6 +3,8 @@ from pages.main_page import MainPage
 from pages.notebooks_page import NotebookPage
 from pages.filtered_notebooks_page import FilteredNotebookPage
 from pages.cart_page import CartPage
+from pages.ordering_page import OrderingPage
+from pages.ordering_page_logistics import OrderingPageLogistics
 
 
 def test_buy_notebook(set_up) -> None:
@@ -20,5 +22,11 @@ def test_buy_notebook(set_up) -> None:
 
     cart_page = CartPage(driver)
     cart_page.confirm_order()
+
+    ordering_page = OrderingPage(driver)
+    ordering_page.ordering()
+
+    ordering_page_logistics = OrderingPageLogistics(driver)
+    ordering_page_logistics.ordering_logistics()
 
     driver.quit()

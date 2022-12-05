@@ -1,6 +1,8 @@
 import re
 from typing import List
 from selenium import webdriver
+from selenium.common import NoSuchElementException
+from selenium.webdriver.common.by import By
 from selenium.webdriver.firefox.service import Service
 from selenium.webdriver.firefox.webdriver import WebDriver
 
@@ -57,3 +59,12 @@ def get_test_price(string: str) -> str:
         changed_list.insert(9, ' ')
         changed_list.insert(10, '₽')
     return separator.join(changed_list)
+
+
+def check_exist_by_path(driver: WebDriver, path: str) -> bool:
+    """Функция проверки на наличие веб-элемента в доме"""
+    try:
+        driver.find_element(By.XPATH, path)
+    except NoSuchElementException:
+        return False
+    return True

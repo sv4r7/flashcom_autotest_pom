@@ -57,7 +57,9 @@ class MainPage(Base):
 
     def go_to_notebooks_page(self) -> None:
         self.get_current_url()
-        self.assert_word(self.get_test_words(), self.TEST_WORDS)
+        self.assert_word(self.get_test_words(),
+                         self.TEST_WORDS,
+                         'Main Page Test Words')
         self.click_catalog_btn()
         self.click_notebooks_link()
         self.click_notebooks_filter()

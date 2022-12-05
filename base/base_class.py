@@ -18,16 +18,16 @@ class Base:
         print(f'Current url {current_url}')
 
     """Метод по сравнению проверочных значений с фактическими"""
-    def assert_word(self, word: WebElement, result: str) -> None:
+    def assert_word(self, word: WebElement, result: str, name: str) -> None:
         word_value: str = word.text
         assert word_value == result
-        print('Expected Word Value - Correct Result')
+        print(f'Expected Word Value - Correct Result for {name}')
 
     """Метод по сравнению значений инпута с фактическими"""
-    def assert_value(self, value: WebElement, result: str) -> None:
+    def assert_value(self, value: WebElement, result: str, name: str) -> None:
         element_value: str = value.get_attribute('value')
         assert element_value == result
-        print('Expected Element Value - Correct Result')
+        print(f'Expected Element Value - Correct Result for {name}')
 
     """Метод по получению скриншота"""
     def get_screenshot(self) -> None:
@@ -36,12 +36,12 @@ class Base:
         self.driver.save_screenshot(f'{self.LOCAL_SCREENSHOT_PATH}/{name_screenshot}')
 
     """Метод по сравнению url"""
-    def assert_url(self, result: str) -> None:
+    def assert_url(self, result: str, name: str) -> None:
         current_url: str = self.driver.current_url
         assert current_url == result
-        print('Expected Url Value - Correct Result')
+        print(f'Expected Url Value - Correct Result for {name}')
 
     """Метод по сравнению  результата работы функции с ожидаемым значением"""
-    def assert_func(self, function: str, result: str) -> None:
+    def assert_func(self, function: str, result: str, name: str) -> None:
         assert function == result
-        print('Expected Function Value - Correct Result')
+        print(f'Expected Function Value - Correct Result for {name}')
