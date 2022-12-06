@@ -30,3 +30,4 @@ class OrderingPageLogistics(Base):
                          self.TEST_WORDS,
                          'Ordering Test Word Value')
         self.assert_url(self.TEST_URL, 'Ordering Page Logistics')
+        self.get_screenshot()
