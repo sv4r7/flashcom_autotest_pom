@@ -15,15 +15,12 @@
 5) Во время работы над тестами постоянно сталкивался с добавлением новой информации, разработчиками
 или удалением информации. Локаторы часто менялись. Так же изменялась цена товара и артикулы.
 
-Тест 1 - Покупка ноутбука - test_buy_notebook
+6) Тест 1 - Покупка ноутбука - test_buy_notebook
 Тест 2 - Проверка попапа - test_check_popup
 
-log test1: 
-
+7) log test1:
 ❯ python -m pytest -s -v test_buy_notebook.py
-====================================================== test session starts ============================================
 collected 1 item
-
 test_buy_notebook.py::test_buy_notebook Start Test
 Current url https://flashcom.ru/
 Expected Word Value - Correct Result for Main Page Test Words
@@ -73,15 +70,9 @@ Expected Word Value - Correct Result for Ordering Test Word Value
 Expected Url Value - Correct Result for Ordering Page Logistics
 PASSEDFinish Test
 
-
-======================================================= 1 passed in 9.75s ============================================
-
-log test2:
-
+8) log test2:
 ❯ python -m pytest -s -v test_check_popup.py
-====================================================== test session starts ===========================================
 collected 1 item
-
 test_check_popup.py::test_check_popup Start Test
 Current url https://flashcom.ru/
 Click Main Page Login Btn
@@ -91,6 +82,3 @@ Expected Word Value - Correct Result for Registration Popup Test Word
 Click Popup Login Btn
 Login Popup Assertion Error
 PASSEDFinish Test
-
-
-======================================================= 1 passed in 6.05s ============================================
