@@ -12,7 +12,7 @@ class FilteredNotebookPage(Base):
                      'filter_priceTo-90000|note_diag-14|3775-Intel%20Core%20i3|1469-'
                      'Intel%20UHD%20Graphics|FILTR_OPERATIVNAYA_PAMYAT_GB-8/')
     NOTEBOOK_VENDOR_CODE: str = 'Артикул 359808'
-    NOTEBOOK_PRICE: str = '83 390 ₽'
+    NOTEBOOK_PRICE: str = '83 940 ₽'
 
     # Locators
 

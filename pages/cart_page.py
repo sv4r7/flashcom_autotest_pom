@@ -11,8 +11,8 @@ class CartPage(Base):
 
     TEST_WORD: str = 'Корзина'
     NOTEBOOK_VENDOR_CODE: str = 'Артикул 359808'
-    NOTEBOOK_PRICE: str = '83 390 ₽'
-    OVERALL_PRICE: str = '83 390 ₽'
+    NOTEBOOK_PRICE: str = '83 940 ₽'
+    OVERALL_PRICE: str = '83 940 ₽'
 
     # Locators
 

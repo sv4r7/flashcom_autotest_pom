@@ -24,9 +24,9 @@ class NotebookPage(Base):
 
     test_word_path: str = '//h1[@class="page__title"]'
     input_range_max_path: str = '//input[@id="range-max-1"]'
-    manufacturer_test_word_path: str = '//label[@for="form-listing-11"]'
-    screen_test_value_path: str = '//label[@for="form-listing-16"]'
-    processor_test_value_path: str = '//label[@for="form-listing-30"]'
+    manufacturer_test_word_path: str = '//label[@for="form-listing-12"]'
+    screen_test_value_path: str = '//label[@for="form-listing-17"]'
+    processor_test_value_path: str = '//label[@for="form-listing-31"]'
     video_card_test_value_path: str = '//label[@for="form-listing-53"]'
     memory_test_value_path: str = '//label[@for="form-listing-72"]'
     submit_btn_path: str = '//*[@id="form-listing-filters"]/fieldset[16]/div/div[1]/button'
