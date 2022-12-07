@@ -3,6 +3,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as ec
 from selenium.webdriver.remote.webelement import WebElement
 from base.base_class import Base
+from utilities.logger import Logger
 
 
 class MainPagePopup(Base):
@@ -95,6 +96,8 @@ class MainPagePopup(Base):
     # Methods
 
     def check_popup(self) -> None:
+        Logger.add_start_step(method='check_popup')
         self.get_current_url()
         self.click_main_page_login_btn()
         self.check_test_words()
+        Logger.add_end_step(url=self.driver.current_url, method='check_popup')

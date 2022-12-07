@@ -6,6 +6,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as ec
 from selenium.webdriver.remote.webelement import WebElement
 from base.base_class import Base
+from utilities.logger import Logger
 
 
 class NotebookPage(Base):
@@ -145,6 +146,7 @@ class NotebookPage(Base):
     # Methods
 
     def select_notebook_filters(self):
+        Logger.add_start_step(method='select_notebook_filters')
         self.get_current_url()
         self.assert_word(self.get_test_word(),
                          self.TEST_WORD,
@@ -174,3 +176,4 @@ class NotebookPage(Base):
                          self.MEMORY_TEST_VALUE,
                          'Memory Value')
         self.click_submit_btn()
+        Logger.add_end_step(url=self.driver.current_url, method='select_notebook_filters')

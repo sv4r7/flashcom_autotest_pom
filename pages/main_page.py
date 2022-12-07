@@ -3,6 +3,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as ec
 from selenium.webdriver.remote.webelement import WebElement
 from base.base_class import Base
+from utilities.logger import Logger
 
 
 class MainPage(Base):
@@ -56,6 +57,7 @@ class MainPage(Base):
     # Methods
 
     def go_to_notebooks_page(self) -> None:
+        Logger.add_start_step(method='go_to_notebooks_page')
         self.get_current_url()
         self.assert_word(self.get_test_words(),
                          self.TEST_WORDS,
@@ -63,3 +65,4 @@ class MainPage(Base):
         self.click_catalog_btn()
         self.click_notebooks_link()
         self.click_notebooks_filter()
+        Logger.add_end_step(url=self.driver.current_url, method='go_to_notebooks_page')

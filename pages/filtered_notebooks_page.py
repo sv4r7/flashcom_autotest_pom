@@ -3,6 +3,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as ec
 from selenium.webdriver.remote.webelement import WebElement
 from base.base_class import Base
+from utilities.logger import Logger
 
 
 class FilteredNotebookPage(Base):
@@ -12,13 +13,13 @@ class FilteredNotebookPage(Base):
                      'filter_priceTo-90000|note_diag-14|3775-Intel%20Core%20i3|1469-'
                      'Intel%20UHD%20Graphics|FILTR_OPERATIVNAYA_PAMYAT_GB-8/')
     NOTEBOOK_VENDOR_CODE: str = 'Артикул 359808'
-    NOTEBOOK_PRICE: str = '83 940 ₽'
+    NOTEBOOK_PRICE: str = '84 920 ₽'
 
     # Locators
 
-    vendor_code_path: str = '//*[@id="listing-grid"]/div[2]/div/span[2]'
-    notebook_price_path: str = '//*[@id="listing-grid"]/div[2]/div/div[2]/div[1]/span'
-    add_to_cart_btn_path: str = '//*[@id="listing-grid"]/div[2]/div/div[2]/div[2]/button'
+    vendor_code_path: str = '//*[@id="listing-grid"]/div[3]/div/span[2]'
+    notebook_price_path: str = '//*[@id="listing-grid"]/div[3]/div/div[2]/div[1]/span'
+    add_to_cart_btn_path: str = '//*[@id="listing-grid"]/div[3]/div/div[2]/div[2]/button'
     cart_btn_path: str = '/html/body/header/div[2]/div/div/div[2]/a[3]/span'
 
     # Getters
@@ -56,6 +57,7 @@ class FilteredNotebookPage(Base):
     # Methods
 
     def add_to_cart_notebook(self):
+        Logger.add_start_step(method='add_to_cart_notebook')
         self.get_current_url()
         self.assert_url(self.TEST_URL,
                         'Filtered Notebook Page Url')
@@ -67,3 +69,4 @@ class FilteredNotebookPage(Base):
                          'Notebook Price Value')
         self.click_add_to_cart_btn()
         self.click_cart_btn()
+        Logger.add_end_step(url=self.driver.current_url, method='add_to_cart_notebook')

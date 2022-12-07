@@ -3,6 +3,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as ec
 from selenium.webdriver.remote.webelement import WebElement
 from base.base_class import Base
+from utilities.logger import Logger
 from utilities.utils import check_exist_by_path
 
 
@@ -131,6 +132,7 @@ class OrderingPage(Base):
     # Methods
 
     def ordering(self) -> None:
+        Logger.add_start_step(method='ordering')
         self.get_current_url()
         self.assert_word(self.get_test_words(),
                          self.TEST_WORDS,
@@ -142,3 +144,4 @@ class OrderingPage(Base):
         self.user_information_input()
         self.click_submit_btn()
         self.check_input_errors()
+        Logger.add_end_step(url=self.driver.current_url, method='ordering')
