@@ -1,3 +1,4 @@
+import allure
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as ec
@@ -65,22 +66,23 @@ class CartPage(Base):
     # Methods
 
     def confirm_order(self) -> None:
-        Logger.add_start_step(method='confirm_order')
-        self.get_current_url()
-        self.assert_word(self.get_test_word(),
-                         self.TEST_WORD,
-                         'Basket Test Word Value')
-        self.assert_word(self.get_vendor_code(),
-                         self.NOTEBOOK_VENDOR_CODE,
-                         'Basket Vendor Code Value')
-        self.assert_word(self.get_notebook_price(),
-                         self.NOTEBOOK_PRICE,
-                         'Basket Price Value')
-        self.assert_func(self.check_price(),
-                         self.OVERALL_PRICE,
-                         'Basket Overall Price Value')
-        self.assert_func(self.check_price(),
-                         self.get_overall_cart_price().text,
-                         'Basket Overall Price Value - Value From Site')
-        self.click_submit_btn()
-        Logger.add_end_step(url=self.driver.current_url, method='confirm_order')
+        with allure.step('Confirm Order'):
+            Logger.add_start_step(method='confirm_order')
+            self.get_current_url()
+            self.assert_word(self.get_test_word(),
+                             self.TEST_WORD,
+                             'Basket Test Word Value')
+            self.assert_word(self.get_vendor_code(),
+                             self.NOTEBOOK_VENDOR_CODE,
+                             'Basket Vendor Code Value')
+            self.assert_word(self.get_notebook_price(),
+                             self.NOTEBOOK_PRICE,
+                             'Basket Price Value')
+            self.assert_func(self.check_price(),
+                             self.OVERALL_PRICE,
+                             'Basket Overall Price Value')
+            self.assert_func(self.check_price(),
+                             self.get_overall_cart_price().text,
+                             'Basket Overall Price Value - Value From Site')
+            self.click_submit_btn()
+            Logger.add_end_step(url=self.driver.current_url, method='confirm_order')

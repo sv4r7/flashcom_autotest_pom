@@ -1,3 +1,4 @@
+import allure
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as ec
@@ -57,16 +58,17 @@ class FilteredNotebookPage(Base):
     # Methods
 
     def add_to_cart_notebook(self):
-        Logger.add_start_step(method='add_to_cart_notebook')
-        self.get_current_url()
-        self.assert_url(self.TEST_URL,
-                        'Filtered Notebook Page Url')
-        self.assert_word(self.get_vendor_code(),
-                         self.NOTEBOOK_VENDOR_CODE,
-                         'Vendor Code Value')
-        self.assert_word(self.get_notebook_price(),
-                         self.NOTEBOOK_PRICE,
-                         'Notebook Price Value')
-        self.click_add_to_cart_btn()
-        self.click_cart_btn()
-        Logger.add_end_step(url=self.driver.current_url, method='add_to_cart_notebook')
+        with allure.step('Add To Cart Notebook'):
+            Logger.add_start_step(method='add_to_cart_notebook')
+            self.get_current_url()
+            self.assert_url(self.TEST_URL,
+                            'Filtered Notebook Page Url')
+            self.assert_word(self.get_vendor_code(),
+                             self.NOTEBOOK_VENDOR_CODE,
+                             'Vendor Code Value')
+            self.assert_word(self.get_notebook_price(),
+                             self.NOTEBOOK_PRICE,
+                             'Notebook Price Value')
+            self.click_add_to_cart_btn()
+            self.click_cart_btn()
+            Logger.add_end_step(url=self.driver.current_url, method='add_to_cart_notebook')

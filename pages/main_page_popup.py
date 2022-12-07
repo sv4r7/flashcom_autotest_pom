@@ -1,3 +1,4 @@
+import allure
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as ec
@@ -96,8 +97,9 @@ class MainPagePopup(Base):
     # Methods
 
     def check_popup(self) -> None:
-        Logger.add_start_step(method='check_popup')
-        self.get_current_url()
-        self.click_main_page_login_btn()
-        self.check_test_words()
-        Logger.add_end_step(url=self.driver.current_url, method='check_popup')
+        with allure.step('Check Popup'):
+            Logger.add_start_step(method='check_popup')
+            self.get_current_url()
+            self.click_main_page_login_btn()
+            self.check_test_words()
+            Logger.add_end_step(url=self.driver.current_url, method='check_popup')

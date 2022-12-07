@@ -1,3 +1,4 @@
+import allure
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as ec
@@ -57,12 +58,13 @@ class MainPage(Base):
     # Methods
 
     def go_to_notebooks_page(self) -> None:
-        Logger.add_start_step(method='go_to_notebooks_page')
-        self.get_current_url()
-        self.assert_word(self.get_test_words(),
-                         self.TEST_WORDS,
-                         'Main Page Test Words')
-        self.click_catalog_btn()
-        self.click_notebooks_link()
-        self.click_notebooks_filter()
-        Logger.add_end_step(url=self.driver.current_url, method='go_to_notebooks_page')
+        with allure.step('Go To Notebooks Page'):
+            Logger.add_start_step(method='go_to_notebooks_page')
+            self.get_current_url()
+            self.assert_word(self.get_test_words(),
+                             self.TEST_WORDS,
+                             'Main Page Test Words')
+            self.click_catalog_btn()
+            self.click_notebooks_link()
+            self.click_notebooks_filter()
+            Logger.add_end_step(url=self.driver.current_url, method='go_to_notebooks_page')

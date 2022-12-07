@@ -1,3 +1,4 @@
+import allure
 from utilities.utils import get_driver
 from pages.main_page import MainPage
 from pages.notebooks_page import NotebookPage
@@ -7,6 +8,7 @@ from pages.ordering_page import OrderingPage
 from pages.ordering_page_logistics import OrderingPageLogistics
 
 
+@allure.description('Test Buy Notebook')
 def test_buy_notebook(set_up) -> None:
     """Функция по запуску теста - покупка ноутбука"""
     driver = get_driver()

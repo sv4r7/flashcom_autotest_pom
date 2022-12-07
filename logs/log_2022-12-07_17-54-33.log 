@@ -1,76 +1,76 @@
 
 -----
-Test: test_buy_notebook.py::test_buy_notebook (call)
-Start time: 2022-12-07 11:43:59.707412
+Test: tests/test_buy_notebook.py::test_buy_notebook (call)
+Start time: 2022-12-07 17:54:37.034472
 Start name method: go_to_notebooks_page
 
-End time: 2022-12-07 11:44:01.031894
+End time: 2022-12-07 17:54:38.406069
 End name method: go_to_notebooks_page
 URL: https://flashcom.ru/market/noutbuki/
 
 -----
 
 -----
-Test: test_buy_notebook.py::test_buy_notebook (call)
-Start time: 2022-12-07 11:44:01.032066
+Test: tests/test_buy_notebook.py::test_buy_notebook (call)
+Start time: 2022-12-07 17:54:38.406394
 Start name method: select_notebook_filters
 
-End time: 2022-12-07 11:44:03.437729
+End time: 2022-12-07 17:54:40.802764
 End name method: select_notebook_filters
 URL: https://flashcom.ru/market/noutbuki/Lenovo/filter_priceTo-90000|note_diag-14|3775-Intel%20Core%20i3|1469-Intel%20UHD%20Graphics|FILTR_OPERATIVNAYA_PAMYAT_GB-8/
 
 -----
 
 -----
-Test: test_buy_notebook.py::test_buy_notebook (call)
-Start time: 2022-12-07 11:44:03.438041
+Test: tests/test_buy_notebook.py::test_buy_notebook (call)
+Start time: 2022-12-07 17:54:40.803051
 Start name method: add_to_cart_notebook
 
-End time: 2022-12-07 11:44:04.081919
+End time: 2022-12-07 17:54:41.421529
 End name method: add_to_cart_notebook
 URL: https://flashcom.ru/basket/
 
 -----
 
 -----
-Test: test_buy_notebook.py::test_buy_notebook (call)
-Start time: 2022-12-07 11:44:04.082110
+Test: tests/test_buy_notebook.py::test_buy_notebook (call)
+Start time: 2022-12-07 17:54:41.421804
 Start name method: confirm_order
 
-End time: 2022-12-07 11:44:04.589504
+End time: 2022-12-07 17:54:41.919460
 End name method: confirm_order
 URL: https://flashcom.ru/order/?CurrentStep=1
 
 -----
 
 -----
-Test: test_buy_notebook.py::test_buy_notebook (call)
-Start time: 2022-12-07 11:44:04.589685
+Test: tests/test_buy_notebook.py::test_buy_notebook (call)
+Start time: 2022-12-07 17:54:41.919740
 Start name method: ordering
 
-End time: 2022-12-07 11:44:05.397832
+End time: 2022-12-07 17:54:42.929071
 End name method: ordering
 URL: https://flashcom.ru/order/index.php?CurrentStep=2
 
 -----
 
 -----
-Test: test_buy_notebook.py::test_buy_notebook (call)
-Start time: 2022-12-07 11:44:05.397991
+Test: tests/test_buy_notebook.py::test_buy_notebook (call)
+Start time: 2022-12-07 17:54:42.929345
 Start name method: ordering_logistics
 
-End time: 2022-12-07 11:44:05.489826
+End time: 2022-12-07 17:54:43.026186
 End name method: ordering_logistics
 URL: https://flashcom.ru/order/index.php?CurrentStep=2
 
 -----
 
 -----
-Test: test_check_popup.py::test_check_popup (call)
-Start time: 2022-12-07 11:44:09.657293
+Test: tests/test_check_popup.py::test_check_popup (call)
+Start time: 2022-12-07 17:54:47.216840
 Start name method: check_popup
 
-End time: 2022-12-07 11:44:10.645841
+End time: 2022-12-07 17:54:48.181512
 End name method: check_popup
 URL: https://flashcom.ru/
 

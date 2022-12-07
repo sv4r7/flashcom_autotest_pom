@@ -1,0 +1,9 @@
+Start Test
+Current url https://flashcom.ru/
+Click Main Page Login Btn
+Expected Word Value - Correct Result for Login Popup Test Word
+Click Popup Registration Btn
+Expected Word Value - Correct Result for Registration Popup Test Word
+Click Popup Login Btn
+Login Popup Assertion Error
+Finish Test

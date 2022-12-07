@@ -1,3 +1,4 @@
+import allure
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as ec
@@ -132,16 +133,17 @@ class OrderingPage(Base):
     # Methods
 
     def ordering(self) -> None:
-        Logger.add_start_step(method='ordering')
-        self.get_current_url()
-        self.assert_word(self.get_test_words(),
-                         self.TEST_WORDS,
-                         'Ordering Test Word Value')
-        self.click_individual_radio_btn()
-        self.assert_word(self.get_individual_radio_btn(),
-                         self.INDIVIDUAL_RADIO_BTN_TEXT,
-                         'Individual Radio Btn Value')
-        self.user_information_input()
-        self.click_submit_btn()
-        self.check_input_errors()
-        Logger.add_end_step(url=self.driver.current_url, method='ordering')
+        with allure.step('Ordering'):
+            Logger.add_start_step(method='ordering')
+            self.get_current_url()
+            self.assert_word(self.get_test_words(),
+                             self.TEST_WORDS,
+                             'Ordering Test Word Value')
+            self.click_individual_radio_btn()
+            self.assert_word(self.get_individual_radio_btn(),
+                             self.INDIVIDUAL_RADIO_BTN_TEXT,
+                             'Individual Radio Btn Value')
+            self.user_information_input()
+            self.click_submit_btn()
+            self.check_input_errors()
+            Logger.add_end_step(url=self.driver.current_url, method='ordering')
